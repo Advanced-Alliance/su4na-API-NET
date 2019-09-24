@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CpaWebApp.Models.AnimeDAO
 {
-    public class ResponseAnime : Responce
+    public class ResponseAnime : Response
     {
         ICollection<Anime> animes;
     }

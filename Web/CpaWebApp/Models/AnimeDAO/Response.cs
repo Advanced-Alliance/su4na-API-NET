@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CpaWebApp.Models.AnimeDAO
 {
-    public class Responce
+    public class Response
     {
         int rows;
         int pages;

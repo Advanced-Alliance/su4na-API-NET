@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CpaWebApp.Models.AnimeDAO
 {
-    class Anime
+    public class Anime
     {
         int id;
         ICollection<MultyName> names;
