@@ -24,13 +24,13 @@ namespace ShikimoriRandomizer.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<AnimeShortInfo> Get([FromQuery] ParametersAnime request)
+        public IEnumerable<Anime> Get([FromQuery] ParametersAnime request)
         {
 
             Anime anime = _animeDAO.Random(request);
 
-            var provider = new ShikimoriProvider(_cache);
-            return new List<AnimeShortInfo> { provider.GetRandomTitle(request) };
+            //var provider = new ShikimoriProvider(_cache);
+            return new List<Anime> { anime };
         }
     }
 }
