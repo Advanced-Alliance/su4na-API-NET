@@ -7,6 +7,6 @@ namespace CpaWebApp.Models.AnimeDAO
 {
     public class ParametersAnime : ParametersSearch
     {
-        int duration;
+        public int duration { get; set; }
     }
 }

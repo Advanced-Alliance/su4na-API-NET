@@ -7,8 +7,8 @@ namespace CpaWebApp.Models.AnimeDAO
 {
     public class ExternalServiceAnime : ExternalService
     {
-        string link;
-        int relevance;
-        bool hasVideo;
+        public string link  { get; set; }
+        public int relevance  { get; set; }
+        public bool hasVideo  { get; set; }
     }
 }

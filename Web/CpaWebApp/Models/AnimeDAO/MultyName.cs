@@ -7,8 +7,8 @@ namespace CpaWebApp.Models.AnimeDAO
 {
     public class MultyName
     {
-        string text;
-        string lang;
-        int relevance;
+        public string text  { get; set; }
+        public string lang  { get; set; }
+        public int relevance  { get; set; }
     }
 }

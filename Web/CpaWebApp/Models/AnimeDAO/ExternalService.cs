@@ -7,8 +7,8 @@ namespace CpaWebApp.Models.AnimeDAO
 {
     public class ExternalService
     {
-        string name;
-        string icon;
-        string siteURL;
+        public string name  { get; set; }
+        public string icon  { get; set; }
+        public string siteURL  { get; set; }
     }
 }

@@ -7,9 +7,9 @@ namespace CpaWebApp.Models.AnimeDAO
 {
     public class Response
     {
-        int rows;
-        int pages;
-        int rowsPerPage;
-        int rowsLastPage;
+        public int rows  { get; set; }
+        public int pages  { get; set; }
+        public int rowsPerPage  { get; set; }
+        public int rowsLastPage  { get; set; }
     }
 }

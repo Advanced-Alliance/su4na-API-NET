@@ -7,6 +7,6 @@ namespace CpaWebApp.Models.AnimeDAO
 {
     public class ResponseAnime : Response
     {
-        ICollection<Anime> animes;
+        public ICollection<Anime> animes { get; set; }
     }
 }

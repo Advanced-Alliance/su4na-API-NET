@@ -7,9 +7,9 @@ namespace CpaWebApp.Models.AnimeDAO
 {
     public class ParameterExtendInt
     {
-        int value;
-        int nextValue;
-        bool negative;
-        bool hasNext;
+        public int value  { get; set; }
+        public int nextValue  { get; set; }
+        public bool negative  { get; set; }
+        public bool hasNext  { get; set; }
     }
 }

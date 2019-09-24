@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CpaWebApp.Interfaces
 {
-    interface IAnimeDAO
+    public interface IAnimeDAO
     {
         ResponseAnime Animes(ParametersAnime parameters);
 
