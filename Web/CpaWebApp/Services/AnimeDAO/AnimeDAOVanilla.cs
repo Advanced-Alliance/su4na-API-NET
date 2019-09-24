@@ -131,8 +131,8 @@ namespace CpaWebApp.Services.AnimeDAO
                         hasVideo = false,
                     }
                 },
-                aired = DateTime.Parse(vanillaAnime.AiredOn).Date,
-                released = DateTime.Parse(vanillaAnime.ReleasedOn).Date,
+                aired = (vanillaAnime.AiredOn == null) ? new DateTime(0) : DateTime.Parse(vanillaAnime.AiredOn).Date,
+                released = (vanillaAnime.ReleasedOn == null) ? new DateTime(0) : DateTime.Parse(vanillaAnime.ReleasedOn).Date,
                 studios = null
 
             };

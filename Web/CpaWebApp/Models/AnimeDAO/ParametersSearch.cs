@@ -7,6 +7,7 @@ namespace CpaWebApp.Models.AnimeDAO
 {
     public class ParametersSearch
     {
+        public string phrase { get; set; }
         public int page  { get; set; }
         public int limit  { get; set; }
         public int order  { get; set; }

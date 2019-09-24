@@ -24,13 +24,37 @@ namespace ShikimoriRandomizer.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Anime> Get([FromQuery] ParametersAnime request)
+        //public IEnumerable<Anime> Get([FromQuery] ParametersAnime request)
+        public IEnumerable<AnimeShortInfo> Get([FromQuery] SearchRequest request)
         {
 
-            Anime anime = _animeDAO.Random(request);
+            //Anime anime = _animeDAO.Random(request);
 
-            //var provider = new ShikimoriProvider(_cache);
-            return new List<Anime> { anime };
+            // Временная костылизация
+            Anime anime = _animeDAO.Random(ConvertToParametersAnime(request));
+
+            //return new List<Anime> { anime };
+            return new List<AnimeShortInfo>
+            {
+                new AnimeShortInfo
+                {
+                    Name = anime.names.First().text,
+                    Url = anime.links.First().link
+                }
+            };
+        }
+
+        // После обновления View метод должен уйти туда, откуда пришел
+        private ParametersAnime ConvertToParametersAnime(SearchRequest source)
+        {
+            ParametersAnime parameters = new ParametersAnime()
+            {
+                phrase = source.Text,
+                genres = source.Genres,
+                studios = source.Studios
+            };
+
+            return parameters;
         }
     }
 }
