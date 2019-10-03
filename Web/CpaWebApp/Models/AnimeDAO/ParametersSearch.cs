@@ -17,7 +17,7 @@ namespace CpaWebApp.Models.AnimeDAO
         public int[] ids  { get; set; }
         public int[] genres  { get; set; }
         public int[] studios  { get; set; }
-        public ICollection<ParameterExtendInt> score  { get; set; }
-        public ICollection<ParameterExtendInt> date  { get; set; }
+        public IList<ParameterExtendInt> score  { get; set; }
+        public IList<ParameterExtendInt> date  { get; set; }
     }
 }

@@ -15,8 +15,8 @@ namespace CpaWebApp.Models.AnimeDAO
         public int episodiesAired { get; set; }
         public int score { get; set; }
         public int epidoseDuration { get; set; }
-        public ICollection<MultyName> names { get; set; }
-        public ICollection<ExternalServiceAnime> links { get; set; }
+        public IList<MultyName> names { get; set; }
+        public IList<ExternalServiceAnime> links { get; set; }
         public MultyImage image  { get; set; }
         public DateTime aired  { get; set; }
         public DateTime released  { get; set; }
