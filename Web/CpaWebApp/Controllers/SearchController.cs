@@ -33,7 +33,7 @@ namespace ShikimoriRandomizer.Controllers
 
         [HttpGet]
         [HttpPost]
-        [Route("/search/")]
+        [Route("/random/")]
         public Anime Random([FromQuery] ParametersAnime request)
         {
             Anime anime = _animeDAO.Random(request);
