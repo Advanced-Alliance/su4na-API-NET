@@ -37,7 +37,7 @@ namespace CpaWebApp.Services.AnimeDAO
                     {
                         lang="ru_ru",
                         relevance=1,
-                        text="Эта функция пока не поддерживается"
+                        text="Вывод списка пока не поддерживается"
                     }
                 }
             };
