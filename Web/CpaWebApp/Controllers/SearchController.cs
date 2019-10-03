@@ -26,9 +26,6 @@ namespace ShikimoriRandomizer.Controllers
         [Route("/search/")]
         public ResponseAnime Search([FromQuery] ParametersAnime request)
         {
-
-            // TODO if request == null
-
             ResponseAnime animes = _animeDAO.Animes(request);
 
             return animes;

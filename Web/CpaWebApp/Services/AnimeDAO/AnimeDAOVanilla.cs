@@ -29,7 +29,33 @@ namespace CpaWebApp.Services.AnimeDAO
 
         public ResponseAnime Animes(ParametersAnime parameters)
         {
-            throw new NotImplementedException();
+            Anime stubAnime = new Anime
+            {
+                names = new List<MultyName>
+                {
+                    new MultyName
+                    {
+                        lang="ru_ru",
+                        relevance=1,
+                        text="Эта функция пока не поддерживается"
+                    }
+                }
+            };
+
+            ResponseAnime response = new ResponseAnime
+            {
+                pages = 1,
+                animes = new List<Anime>
+                {
+                    Random(parameters),
+                    stubAnime
+                },
+                rows = 2,
+                rowsPerPage = 2,
+                rowsLastPage = 2,
+            };
+
+            return response;
         }
 
         public Anime Random()
