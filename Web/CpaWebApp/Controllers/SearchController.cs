@@ -11,7 +11,6 @@ using CpaWebApp.Models.AnimeDAO;
 
 namespace ShikimoriRandomizer.Controllers
 {
-    [Route("/api/Search/")]
     public class SearchController : Controller
     {
         private IAnimeDAO _animeDAO;
@@ -21,17 +20,40 @@ namespace ShikimoriRandomizer.Controllers
             this._animeDAO = animeDAO;
         }
 
+
         [HttpGet]
-        //public IEnumerable<Anime> Get([FromQuery] ParametersAnime request)
+        [HttpPost]
+        [Route("/search/")]
+        public ResponseAnime Search([FromQuery] ParametersAnime request)
+        {
+
+            // TODO if request == null
+
+            ResponseAnime animes = _animeDAO.Animes(request);
+
+            return animes;
+        }
+
+        [HttpGet]
+        [HttpPost]
+        [Route("/search/")]
+        public Anime Random([FromQuery] ParametersAnime request)
+        {
+            Anime anime = _animeDAO.Random(request);
+
+            return anime;
+        }
+
+
+        // LEGACY START
+
+        [Route("/api/Search/")]
+        [HttpGet]
         public IEnumerable<AnimeShortInfo> Get([FromQuery] SearchRequest request)
         {
 
-            //Anime anime = _animeDAO.Random(request);
-
-            // Временная костылизация
             Anime anime = _animeDAO.Random(ConvertToParametersAnime(request));
 
-            //return new List<Anime> { anime };
             return new List<AnimeShortInfo>
             {
                 new AnimeShortInfo
@@ -42,7 +64,6 @@ namespace ShikimoriRandomizer.Controllers
             };
         }
 
-        // После обновления View метод должен уйти туда, откуда пришел
         private ParametersAnime ConvertToParametersAnime(SearchRequest source)
         {
             ParametersAnime parameters = new ParametersAnime()
@@ -54,5 +75,7 @@ namespace ShikimoriRandomizer.Controllers
 
             return parameters;
         }
+
+        // LEGACY END
     }
 }
